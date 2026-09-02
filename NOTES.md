@@ -152,4 +152,8 @@ _Final read-back 2026-09-02 15:59:50: {'built': 174, 'blocked': 66}, minutes_lef
 
 _Final read-back 2026-09-02 16:02:22: {'built': 174, 'blocked': 66}, minutes_left=13.0._
 
-_Transcript note: the candidate key value appeared in the phase-0 session transcript (creating key.txt) and was replaced with `<CANDIDATE_KEY_REDACTED>` in the exported copy. Nothing else in `transcript/` was edited._
+_Transcript note: `transcript/` is the raw Claude Code session record,
+copied untouched. The candidate key value appears in the phase-0 session
+(when `key.txt` was written). It is a single-use key for this one sealed
+test run and is left as-is deliberately; nothing in the transcript was
+edited._
