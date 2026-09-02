@@ -84,13 +84,47 @@ different budget or swapped dates is not the campaign they asked for.
 - Unresolved briefs at the deadline are reported blocked, not built
   (−0.25 worst case vs −3).
 
-## What I would fix with another two hours
+## Decisions, in my own words
 
-_(tbd)_
+The 44 briefs I reported blocked were refused for reasons fixed in the
+data the platform holds, not in anything I controlled: eleven referenced
+a creative id that does not exist, eleven had a budget under their
+account's floor, eleven were on the one archived account, and eleven had
+an end date before their start date. (Correction to my first draft of
+this note: the dates and budgets are properties of the brief, checked
+against the account; the archived state is the account's.) I did not
+change budgets, dates, accounts or creative lists to force them through,
+because the brief is the client's ask and a campaign built to different
+numbers is not the campaign they asked for. All 44 were re-posted
+unchanged every three minutes for the rest of the run and refused
+identically each time.
+
+The other 22 were refused because their single creative was still a
+draft. That is a state, not an identity, so I treated it as "not yet"
+and ran a loop for about 90 minutes that re-posted them, re-verified
+every existing build against the listing, and watched the asset list.
+No asset changed status during the run, so they are reported blocked
+with the platform's code and the creative id.
+
+## What I would do differently
+
+Not much. The buildable and blocked sets were identified inside the
+first fifteen minutes; everything after that was verification. The one
+thing I would extend is the loop: the only state on this platform that
+looked mutable was `live | draft` on assets, and I only observed it for
+ninety minutes. Given another two hours I would simply keep the loop
+running and post at the end.
 
 ## What I am still unsure of
 
-_(tbd)_
+- The exact shape of the API beyond what I could provoke. There is no
+  description document, no links in responses, and routes were found by
+  guessing nouns, so a route with a name I never tried would be invisible.
+- Whether the draft assets were ever going to go live inside the two
+  hours, or whether that class was a permanent refusal wearing a
+  transient costume.
+- The order of validation in `POST /s1/campaigns` is inferred from which
+  error wins, not documented.
 
 ## Tooling
 
