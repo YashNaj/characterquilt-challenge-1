@@ -66,7 +66,7 @@
    "verified": true
   },
   "bf-0003": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-007",
     "budget_cents": 194000,
@@ -185,6 +185,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0003\",\n  \"creative_ids\": [\n    \"cr-0104\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.233719
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.31s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0003\",\n  \"creative_ids\": [\n    \"cr-0104\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386832.856107
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0003\",\n  \"creative_ids\": [\n    \"cr-0104\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387034.9642591
     }
    ],
    "reason": "asset_not_live",
@@ -223,7 +233,7 @@
    "verified": true
   },
   "bf-0005": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-005",
     "budget_cents": 253000,
@@ -260,6 +270,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0005\"\n}",
      "event": "refused:blocked",
      "ts": 1788386643.442524
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0005\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386839.959316
+    },
+    {
+     "detail": "HTTP 422 (4 attempt(s), 0.14s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0005\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387041.154708
     }
    ],
    "reason": "missing_asset",
@@ -267,7 +287,7 @@
    "verified": false
   },
   "bf-0006": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-001",
     "budget_cents": 52000,
@@ -302,6 +322,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0006\"\n}",
      "event": "refused:blocked",
      "ts": 1788386643.4870842
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0006\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386839.977939
+    },
+    {
+     "detail": "HTTP 422 (4 attempt(s), 0.13s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0006\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387041.1433249
     }
    ],
    "reason": "budget_below_floor",
@@ -309,7 +339,7 @@
    "verified": false
   },
   "bf-0007": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-007",
     "budget_cents": 304000,
@@ -428,6 +458,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.27s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0007\",\n  \"creative_ids\": [\n    \"cr-0138\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.326826
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0007\",\n  \"creative_ids\": [\n    \"cr-0138\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386832.688287
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0007\",\n  \"creative_ids\": [\n    \"cr-0138\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387034.963103
     }
    ],
    "reason": "asset_not_live",
@@ -435,7 +475,7 @@
    "verified": false
   },
   "bf-0008": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-004",
     "budget_cents": 301000,
@@ -471,6 +511,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0008\"\n}",
      "event": "refused:blocked",
      "ts": 1788386643.6135318
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0008\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.0448651
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0008\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387041.284239
     }
    ],
    "reason": "missing_asset",
@@ -511,7 +561,7 @@
    "verified": true
   },
   "bf-0010": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-002",
     "budget_cents": 199000,
@@ -548,6 +598,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0010\"\n}",
      "event": "refused:blocked",
      "ts": 1788386643.5807412
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0010\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.087596
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0010\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387041.283515
     }
    ],
    "reason": "missing_asset",
@@ -650,7 +710,7 @@
    "verified": true
   },
   "bf-0014": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-008",
     "budget_cents": 100000,
@@ -686,6 +746,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0014\"\n}",
      "event": "refused:blocked",
      "ts": 1788386643.628683
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0014\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.127578
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0014\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387041.313819
     }
    ],
    "reason": "archived_account",
@@ -693,7 +763,7 @@
    "verified": false
   },
   "bf-0015": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-004",
     "budget_cents": 361000,
@@ -812,6 +882,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.28s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0015\",\n  \"creative_ids\": [\n    \"cr-0028\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.343942
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.26s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0015\",\n  \"creative_ids\": [\n    \"cr-0028\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386832.810438
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0015\",\n  \"creative_ids\": [\n    \"cr-0028\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387034.9754188
     }
    ],
    "reason": "asset_not_live",
@@ -819,7 +899,7 @@
    "verified": false
   },
   "bf-0016": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-008",
     "budget_cents": 302000,
@@ -854,6 +934,16 @@
      "detail": "HTTP 422 (2 attempt(s), 0.17s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0016\"\n}",
      "event": "refused:blocked",
      "ts": 1788386649.926204
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0016\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.171925
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0016\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387041.42374
     }
    ],
    "reason": "archived_account",
@@ -956,7 +1046,7 @@
    "verified": true
   },
   "bf-0020": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-006",
     "budget_cents": 85000,
@@ -1075,6 +1165,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0020\",\n  \"creative_ids\": [\n    \"cr-0108\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.4078562
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0020\",\n  \"creative_ids\": [\n    \"cr-0108\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386832.819656
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0020\",\n  \"creative_ids\": [\n    \"cr-0108\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387035.375648
     }
    ],
    "reason": "asset_not_live",
@@ -1113,7 +1213,7 @@
    "verified": true
   },
   "bf-0022": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-003",
     "budget_cents": 215000,
@@ -1232,6 +1332,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0022\",\n  \"creative_ids\": [\n    \"cr-0089\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.4956312
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.18s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0022\",\n  \"creative_ids\": [\n    \"cr-0089\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386832.992799
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.17s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0022\",\n  \"creative_ids\": [\n    \"cr-0089\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387035.406378
     }
    ],
    "reason": "asset_not_live",
@@ -1272,7 +1382,7 @@
    "verified": true
   },
   "bf-0024": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-004",
     "budget_cents": 90000,
@@ -1309,6 +1419,16 @@
      "detail": "HTTP 422 (2 attempt(s), 0.17s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0024\"\n}",
      "event": "refused:blocked",
      "ts": 1788386649.961592
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0024\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.2234828
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0024\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387041.431747
     }
    ],
    "reason": "missing_asset",
@@ -1348,7 +1468,7 @@
    "verified": true
   },
   "bf-0026": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-002",
     "budget_cents": 370000,
@@ -1467,6 +1587,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0026\",\n  \"creative_ids\": [\n    \"cr-0075\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.4972239
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0026\",\n  \"creative_ids\": [\n    \"cr-0075\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386832.9482298
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0026\",\n  \"creative_ids\": [\n    \"cr-0075\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387035.375086
     }
    ],
    "reason": "asset_not_live",
@@ -1474,7 +1604,7 @@
    "verified": false
   },
   "bf-0027": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-008",
     "budget_cents": 68000,
@@ -1508,6 +1638,16 @@
      "detail": "HTTP 422 (2 attempt(s), 0.18s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0027\"\n}",
      "event": "refused:blocked",
      "ts": 1788386649.974129
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0027\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.270665
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0027\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387041.4733691
     }
    ],
    "reason": "archived_account",
@@ -1515,7 +1655,7 @@
    "verified": false
   },
   "bf-0028": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-007",
     "budget_cents": 167000,
@@ -1634,6 +1774,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0028\",\n  \"creative_ids\": [\n    \"cr-0106\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.572701
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0028\",\n  \"creative_ids\": [\n    \"cr-0106\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386832.992966
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0028\",\n  \"creative_ids\": [\n    \"cr-0106\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387035.516047
     }
    ],
    "reason": "asset_not_live",
@@ -1641,7 +1791,7 @@
    "verified": false
   },
   "bf-0029": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-004",
     "budget_cents": 65000,
@@ -1675,6 +1825,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0029\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.087008
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0029\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.304851
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.16s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0029\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387041.869975
     }
    ],
    "reason": "date_inversion",
@@ -1682,7 +1842,7 @@
    "verified": false
   },
   "bf-0030": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-003",
     "budget_cents": 248000,
@@ -1717,6 +1877,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0030\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.134322
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0030\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.358448
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.14s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0030\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387041.852362
     }
    ],
    "reason": "date_inversion",
@@ -2087,7 +2257,7 @@
    "verified": true
   },
   "bf-0041": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-007",
     "budget_cents": 179000,
@@ -2206,6 +2376,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0041\",\n  \"creative_ids\": [\n    \"cr-0020\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.656863
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0041\",\n  \"creative_ids\": [\n    \"cr-0020\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386833.084886
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0041\",\n  \"creative_ids\": [\n    \"cr-0020\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387035.516163
     }
    ],
    "reason": "asset_not_live",
@@ -2600,7 +2780,7 @@
    "verified": true
   },
   "bf-0053": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-004",
     "budget_cents": 42000,
@@ -2634,6 +2814,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0053\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.134165
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0053\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.434051
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.14s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0053\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387041.851365
     }
    ],
    "reason": "budget_below_floor",
@@ -2641,7 +2831,7 @@
    "verified": false
   },
   "bf-0054": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-002",
     "budget_cents": 134000,
@@ -2676,6 +2866,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.18s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0054\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.2696698
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0054\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.438785
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0054\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387041.9866
     }
    ],
    "reason": "date_inversion",
@@ -2746,7 +2946,7 @@
    "verified": true
   },
   "bf-0057": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-004",
     "budget_cents": 168000,
@@ -2865,6 +3065,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.18s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0057\",\n  \"creative_ids\": [\n    \"cr-0047\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.678706
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0057\",\n  \"creative_ids\": [\n    \"cr-0047\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386833.1574779
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0057\",\n  \"creative_ids\": [\n    \"cr-0047\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387035.557958
     }
    ],
    "reason": "asset_not_live",
@@ -2938,7 +3148,7 @@
    "verified": true
   },
   "bf-0060": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-008",
     "budget_cents": 297000,
@@ -2974,6 +3184,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0060\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.2973042
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0060\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.497138
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0060\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387041.990517
     }
    ],
    "reason": "archived_account",
@@ -3078,7 +3298,7 @@
    "verified": true
   },
   "bf-0064": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-006",
     "budget_cents": 311000,
@@ -3197,6 +3417,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0064\",\n  \"creative_ids\": [\n    \"cr-0066\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.7407181
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0064\",\n  \"creative_ids\": [\n    \"cr-0066\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386833.130687
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0064\",\n  \"creative_ids\": [\n    \"cr-0066\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387035.658568
     }
    ],
    "reason": "asset_not_live",
@@ -3327,7 +3557,7 @@
    "verified": true
   },
   "bf-0068": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-008",
     "budget_cents": 119000,
@@ -3362,6 +3592,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.18s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0068\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.315139
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0068\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.581547
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0068\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387042.030863
     }
    ],
    "reason": "archived_account",
@@ -3560,7 +3800,7 @@
    "verified": true
   },
   "bf-0075": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-008",
     "budget_cents": 318000,
@@ -3595,6 +3835,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.18s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0075\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.450787
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0075\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.572098
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0075\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387042.122988
     }
    ],
    "reason": "archived_account",
@@ -3602,7 +3852,7 @@
    "verified": false
   },
   "bf-0076": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-002",
     "budget_cents": 12000,
@@ -3637,6 +3887,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0076\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.4402518
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0076\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.6325939
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0076\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387042.124435
     }
    ],
    "reason": "budget_below_floor",
@@ -3803,7 +4063,7 @@
    "verified": true
   },
   "bf-0082": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-001",
     "budget_cents": 213000,
@@ -3839,6 +4099,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0082\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.4853241
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0082\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.702799
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0082\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387042.184049
     }
    ],
    "reason": "missing_asset",
@@ -3879,7 +4149,7 @@
    "verified": true
   },
   "bf-0084": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-001",
     "budget_cents": 386000,
@@ -3998,6 +4268,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0084\",\n  \"creative_ids\": [\n    \"cr-0064\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.8064399
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0084\",\n  \"creative_ids\": [\n    \"cr-0064\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386833.222241
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0084\",\n  \"creative_ids\": [\n    \"cr-0064\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387035.658713
     }
    ],
    "reason": "asset_not_live",
@@ -4180,7 +4460,7 @@
    "verified": true
   },
   "bf-0090": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-001",
     "budget_cents": 43000,
@@ -4215,6 +4495,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0090\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.590817
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0090\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.737834
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.14s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0090\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387042.5317981
     }
    ],
    "reason": "budget_below_floor",
@@ -4603,7 +4893,7 @@
    "verified": true
   },
   "bf-0103": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-005",
     "budget_cents": 37000,
@@ -4637,6 +4927,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0103\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.622556
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0103\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.765748
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.14s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0103\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387042.525141
     }
    ],
    "reason": "budget_below_floor",
@@ -4804,7 +5104,7 @@
    "verified": true
   },
   "bf-0109": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-007",
     "budget_cents": 271000,
@@ -4923,6 +5223,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0109\",\n  \"creative_ids\": [\n    \"cr-0047\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.8423429
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0109\",\n  \"creative_ids\": [\n    \"cr-0047\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386833.265995
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0109\",\n  \"creative_ids\": [\n    \"cr-0047\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387035.7021592
     }
    ],
    "reason": "asset_not_live",
@@ -4962,7 +5272,7 @@
    "verified": true
   },
   "bf-0111": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-006",
     "budget_cents": 165000,
@@ -4998,6 +5308,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0111\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.6497972
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0111\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.833668
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.13s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0111\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387042.521318
     }
    ],
    "reason": "missing_asset",
@@ -5005,7 +5325,7 @@
    "verified": false
   },
   "bf-0112": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-007",
     "budget_cents": 33000,
@@ -5040,6 +5360,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.18s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0112\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.7739992
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0112\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.9050581
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0112\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387042.661818
     }
    ],
    "reason": "budget_below_floor",
@@ -5272,7 +5602,7 @@
    "verified": true
   },
   "bf-0120": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-005",
     "budget_cents": 34000,
@@ -5306,6 +5636,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0120\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.788745
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0120\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.901557
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0120\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387042.661003
     }
    ],
    "reason": "budget_below_floor",
@@ -5344,7 +5684,7 @@
    "verified": true
   },
   "bf-0122": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-006",
     "budget_cents": 252000,
@@ -5380,6 +5720,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0122\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.797587
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0122\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386840.9623702
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0122\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387042.693781
     }
    ],
    "reason": "missing_asset",
@@ -5387,7 +5737,7 @@
    "verified": false
   },
   "bf-0123": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-007",
     "budget_cents": 363000,
@@ -5506,6 +5856,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.19s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0123\",\n  \"creative_ids\": [\n    \"cr-0047\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.928867
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0123\",\n  \"creative_ids\": [\n    \"cr-0047\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386833.305377
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0123\",\n  \"creative_ids\": [\n    \"cr-0047\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387036.065554
     }
    ],
    "reason": "asset_not_live",
@@ -5713,7 +6073,7 @@
    "verified": true
   },
   "bf-0129": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-006",
     "budget_cents": 140000,
@@ -5748,6 +6108,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0129\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.917164
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0129\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.037345
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0129\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387042.7979672
     }
    ],
    "reason": "date_inversion",
@@ -5833,7 +6203,7 @@
    "verified": true
   },
   "bf-0132": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-002",
     "budget_cents": 138000,
@@ -5952,6 +6322,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0132\",\n  \"creative_ids\": [\n    \"cr-0049\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.968214
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0132\",\n  \"creative_ids\": [\n    \"cr-0049\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386833.352671
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.15s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0132\",\n  \"creative_ids\": [\n    \"cr-0049\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387036.076073
     }
    ],
    "reason": "asset_not_live",
@@ -6006,7 +6386,7 @@
    "verified": true
   },
   "bf-0134": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-008",
     "budget_cents": 334000,
@@ -6041,6 +6421,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0134\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.949962
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0134\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.067416
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0134\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387042.793
     }
    ],
    "reason": "archived_account",
@@ -6112,7 +6502,7 @@
    "verified": true
   },
   "bf-0137": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-007",
     "budget_cents": 160000,
@@ -6148,6 +6538,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0137\"\n}",
      "event": "refused:blocked",
      "ts": 1788386650.963352
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0137\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.0914319
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0137\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387042.854694
     }
    ],
    "reason": "date_inversion",
@@ -6250,7 +6650,7 @@
    "verified": true
   },
   "bf-0141": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-006",
     "budget_cents": 129000,
@@ -6284,6 +6684,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0141\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.067389
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0141\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.175083
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.14s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0141\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387043.1916149
     }
    ],
    "reason": "date_inversion",
@@ -6464,7 +6874,7 @@
    "verified": true
   },
   "bf-0147": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-007",
     "budget_cents": 168000,
@@ -6583,6 +6993,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0147\",\n  \"creative_ids\": [\n    \"cr-0116\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386642.9921112
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0147\",\n  \"creative_ids\": [\n    \"cr-0116\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386833.399023
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.13s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0147\",\n  \"creative_ids\": [\n    \"cr-0116\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387036.059375
     }
    ],
    "reason": "asset_not_live",
@@ -6732,7 +7152,7 @@
    "verified": true
   },
   "bf-0152": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-008",
     "budget_cents": 366000,
@@ -6767,6 +7187,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0152\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.119745
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0152\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.2300758
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.13s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0152\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387043.185848
     }
    ],
    "reason": "archived_account",
@@ -6948,7 +7378,7 @@
    "verified": true
   },
   "bf-0158": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-008",
     "budget_cents": 341000,
@@ -6982,6 +7412,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0158\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.134807
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0158\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.224245
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.16s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0158\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387043.2116969
     }
    ],
    "reason": "archived_account",
@@ -7022,7 +7462,7 @@
    "verified": true
   },
   "bf-0160": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-008",
     "budget_cents": 281000,
@@ -7056,6 +7496,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0160\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.230256
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0160\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.311732
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0160\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387043.315701
     }
    ],
    "reason": "archived_account",
@@ -7284,7 +7734,7 @@
    "verified": true
   },
   "bf-0167": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-008",
     "budget_cents": 241000,
@@ -7319,6 +7769,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.18s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0167\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.3004942
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0167\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.355917
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"archived_account\",\n  \"brief_id\": \"bf-0167\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387043.332086
     }
    ],
    "reason": "archived_account",
@@ -7546,7 +8006,7 @@
    "verified": true
   },
   "bf-0174": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-007",
     "budget_cents": 82000,
@@ -7665,6 +8125,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0174\",\n  \"creative_ids\": [\n    \"cr-0064\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386643.0948749
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0174\",\n  \"creative_ids\": [\n    \"cr-0064\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386833.44486
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0174\",\n  \"creative_ids\": [\n    \"cr-0064\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387036.18827
     }
    ],
    "reason": "asset_not_live",
@@ -7803,7 +8273,7 @@
    "verified": true
   },
   "bf-0179": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-002",
     "budget_cents": 78000,
@@ -7922,6 +8392,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0179\",\n  \"creative_ids\": [\n    \"cr-0072\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386643.107759
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0179\",\n  \"creative_ids\": [\n    \"cr-0072\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386833.478283
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0179\",\n  \"creative_ids\": [\n    \"cr-0072\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387036.205003
     }
    ],
    "reason": "asset_not_live",
@@ -8043,7 +8523,7 @@
    "verified": true
   },
   "bf-0183": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-006",
     "budget_cents": 21000,
@@ -8078,6 +8558,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0183\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.3012109
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0183\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.388561
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0183\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387043.3526988
     }
    ],
    "reason": "budget_below_floor",
@@ -8150,7 +8640,7 @@
    "verified": true
   },
   "bf-0186": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-002",
     "budget_cents": 328000,
@@ -8269,6 +8759,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.18s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0186\",\n  \"creative_ids\": [\n    \"cr-0106\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386643.170777
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0186\",\n  \"creative_ids\": [\n    \"cr-0106\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386833.529139
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0186\",\n  \"creative_ids\": [\n    \"cr-0106\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387036.23717
     }
    ],
    "reason": "asset_not_live",
@@ -8308,7 +8808,7 @@
    "verified": true
   },
   "bf-0188": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-004",
     "budget_cents": 96000,
@@ -8427,6 +8927,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.18s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0188\",\n  \"creative_ids\": [\n    \"cr-0099\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386643.2707431
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0188\",\n  \"creative_ids\": [\n    \"cr-0099\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386833.606028
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0188\",\n  \"creative_ids\": [\n    \"cr-0099\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387036.3163142
     }
    ],
    "reason": "asset_not_live",
@@ -8434,7 +8944,7 @@
    "verified": false
   },
   "bf-0189": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-001",
     "budget_cents": 127000,
@@ -8471,6 +8981,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0189\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.397193
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0189\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.4519339
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0189\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387043.450939
     }
    ],
    "reason": "missing_asset",
@@ -8478,7 +8998,7 @@
    "verified": false
   },
   "bf-0190": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-007",
     "budget_cents": 241000,
@@ -8597,6 +9117,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0190\",\n  \"creative_ids\": [\n    \"cr-0028\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386643.272827
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.20s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0190\",\n  \"creative_ids\": [\n    \"cr-0028\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386839.808151
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0190\",\n  \"creative_ids\": [\n    \"cr-0028\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387036.3390489
     }
    ],
    "reason": "asset_not_live",
@@ -8699,7 +9229,7 @@
    "verified": true
   },
   "bf-0194": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-006",
     "budget_cents": 83000,
@@ -8735,6 +9265,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0194\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.475459
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0194\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.496323
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0194\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387043.466541
     }
    ],
    "reason": "missing_asset",
@@ -8899,7 +9439,7 @@
    "verified": true
   },
   "bf-0200": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-002",
     "budget_cents": 107000,
@@ -8934,6 +9474,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.18s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0200\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.4831018
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0200\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.538288
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.16s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0200\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387043.513709
     }
    ],
    "reason": "date_inversion",
@@ -9136,7 +9686,7 @@
    "verified": true
   },
   "bf-0207": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-007",
     "budget_cents": 329000,
@@ -9172,6 +9722,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0207\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.5470452
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0207\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.587786
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0207\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387043.591233
     }
    ],
    "reason": "missing_asset",
@@ -9441,7 +10001,7 @@
    "verified": true
   },
   "bf-0216": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-006",
     "budget_cents": 247000,
@@ -9477,6 +10037,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0216\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.647899
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0216\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386841.630351
+    },
+    {
+     "detail": "HTTP 422 (4 attempt(s), 0.14s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0216\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387052.287746
     }
    ],
    "reason": "date_inversion",
@@ -9724,7 +10294,7 @@
    "verified": true
   },
   "bf-0224": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-003",
     "budget_cents": 188000,
@@ -9759,6 +10329,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0224\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.6506581
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.15s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0224\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386850.8644218
+    },
+    {
+     "detail": "HTTP 422 (4 attempt(s), 0.13s): {\n  \"error\": \"missing_asset\",\n  \"brief_id\": \"bf-0224\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387052.281708
     }
    ],
    "reason": "missing_asset",
@@ -9862,7 +10442,7 @@
    "verified": true
   },
   "bf-0228": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-004",
     "budget_cents": 299000,
@@ -9896,6 +10476,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0228\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.687444
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.14s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0228\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386850.8640928
+    },
+    {
+     "detail": "HTTP 422 (4 attempt(s), 0.16s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0228\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387052.314993
     }
    ],
    "reason": "date_inversion",
@@ -9935,7 +10525,7 @@
    "verified": true
   },
   "bf-0230": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-001",
     "budget_cents": 246000,
@@ -9970,6 +10560,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.18s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0230\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.829281
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.17s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0230\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386850.935385
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0230\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387052.413244
     }
    ],
    "reason": "date_inversion",
@@ -10010,7 +10610,7 @@
    "verified": true
   },
   "bf-0232": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-007",
     "budget_cents": 33000,
@@ -10044,6 +10644,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.19s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0232\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.841316
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0232\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386851.010305
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0232\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387052.425419
     }
    ],
    "reason": "budget_below_floor",
@@ -10084,7 +10694,7 @@
    "verified": true
   },
   "bf-0234": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-004",
     "budget_cents": 49000,
@@ -10120,6 +10730,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0234\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.826276
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0234\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386851.0106728
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0234\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387052.4692721
     }
    ],
    "reason": "budget_below_floor",
@@ -10159,7 +10779,7 @@
    "verified": true
   },
   "bf-0236": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-004",
     "budget_cents": 326000,
@@ -10278,6 +10898,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0236\",\n  \"creative_ids\": [\n    \"cr-0089\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386643.337174
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.14s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0236\",\n  \"creative_ids\": [\n    \"cr-0089\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386839.816801
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0236\",\n  \"creative_ids\": [\n    \"cr-0089\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387036.3833978
     }
    ],
    "reason": "asset_not_live",
@@ -10285,7 +10915,7 @@
    "verified": false
   },
   "bf-0237": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-003",
     "budget_cents": 38000,
@@ -10319,6 +10949,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0237\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.9782379
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.18s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0237\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386851.112703
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"budget_below_floor\",\n  \"brief_id\": \"bf-0237\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387052.544263
     }
    ],
    "reason": "budget_below_floor",
@@ -10326,7 +10966,7 @@
    "verified": false
   },
   "bf-0238": {
-   "attempts": 3,
+   "attempts": 5,
    "brief": {
     "account_id": "acct-004",
     "budget_cents": 285000,
@@ -10361,6 +11001,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.15s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0238\"\n}",
      "event": "refused:blocked",
      "ts": 1788386651.983289
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.13s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0238\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788386851.145625
+    },
+    {
+     "detail": "HTTP 422 (1 attempt(s), 0.14s): {\n  \"error\": \"date_inversion\",\n  \"brief_id\": \"bf-0238\"\n}",
+     "event": "refused:blocked",
+     "ts": 1788387052.563217
     }
    ],
    "reason": "date_inversion",
@@ -10399,7 +11049,7 @@
    "verified": true
   },
   "bf-0240": {
-   "attempts": 20,
+   "attempts": 22,
    "brief": {
     "account_id": "acct-002",
     "budget_cents": 99000,
@@ -10518,6 +11168,16 @@
      "detail": "HTTP 422 (1 attempt(s), 0.17s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0240\",\n  \"creative_ids\": [\n    \"cr-0089\"\n  ],\n  \"asset_status\": \"draft\"\n}",
      "event": "refused:transient",
      "ts": 1788386643.4426072
+    },
+    {
+     "detail": "HTTP 422 (2 attempt(s), 0.15s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0240\",\n  \"creative_ids\": [\n    \"cr-0089\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788386839.905289
+    },
+    {
+     "detail": "HTTP 422 (4 attempt(s), 0.13s): {\n  \"error\": \"asset_not_live\",\n  \"brief_id\": \"bf-0240\",\n  \"creative_ids\": [\n    \"cr-0089\"\n  ],\n  \"asset_status\": \"draft\"\n}",
+     "event": "refused:transient",
+     "ts": 1788387041.1430788
     }
    ],
    "reason": "asset_not_live",

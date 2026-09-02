@@ -55,6 +55,12 @@ From 839 logged exchanges plus targeted probes:
 | Pagination overlap | Pages repeat the boundary item at some cursors (244 rows for 240; 178 for 174). Never drops items. | Dedupe by id; assert unique count == `total`. |
 | Draft assets | 22 briefs each reference exactly one `draft` creative. No timestamp, header, or route hints when/if it goes live. | Re-post every 3 min; report blocked with the code if still draft at the deadline. |
 
+Second route sweep at 15:10 (80 more curated paths, query filters,
+OPTIONS/HEAD/PATCH): nothing new. `/auth/refresh` is an alias of
+`/auth/start`; `/robots.txt` is Cloudflare's default content-signal text;
+every list filter (`status`, `kind`, `brief_id`, `id`) is ignored; no
+method other than GET/POST on the four resources exists.
+
 Reads are consistent: five back-to-back campaign listings were identical,
 no brief drifted between fetches, latency p95 0.28 s, no 5xx seen.
 GET by id does not exist for any resource.
