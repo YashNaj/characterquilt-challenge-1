@@ -1,0 +1,1 @@
+report covers 240 briefs: {'built': 174, 'blocked': 66}

@@ -1,0 +1,790 @@
+{
+ "report": {
+  "bf-0001": {
+   "status": "built"
+  },
+  "bf-0002": {
+   "status": "built"
+  },
+  "bf-0003": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0104'])"
+  },
+  "bf-0004": {
+   "status": "built"
+  },
+  "bf-0005": {
+   "status": "blocked",
+   "reason": "missing_asset: platform has no asset for one of the brief's creative ids (creative_ids=['cr-0019', 'cr-0044', 'cr-0039', 'cr-9072'])"
+  },
+  "bf-0006": {
+   "status": "blocked",
+   "reason": "budget_below_floor: brief budget_cents is below the account's budget_floor_cents (budget_cents=52000, account=acct-001)"
+  },
+  "bf-0007": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0138'])"
+  },
+  "bf-0008": {
+   "status": "blocked",
+   "reason": "missing_asset: platform has no asset for one of the brief's creative ids (creative_ids=['cr-0078', 'cr-0018', 'cr-9010'])"
+  },
+  "bf-0009": {
+   "status": "built"
+  },
+  "bf-0010": {
+   "status": "blocked",
+   "reason": "missing_asset: platform has no asset for one of the brief's creative ids (creative_ids=['cr-0019', 'cr-0120', 'cr-0040', 'cr-9098'])"
+  },
+  "bf-0011": {
+   "status": "built"
+  },
+  "bf-0012": {
+   "status": "built"
+  },
+  "bf-0013": {
+   "status": "built"
+  },
+  "bf-0014": {
+   "status": "blocked",
+   "reason": "archived_account: the brief's account is archived on the platform (acct-008)"
+  },
+  "bf-0015": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0028'])"
+  },
+  "bf-0016": {
+   "status": "blocked",
+   "reason": "archived_account: the brief's account is archived on the platform (acct-008)"
+  },
+  "bf-0017": {
+   "status": "built"
+  },
+  "bf-0018": {
+   "status": "built"
+  },
+  "bf-0019": {
+   "status": "built"
+  },
+  "bf-0020": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0108'])"
+  },
+  "bf-0021": {
+   "status": "built"
+  },
+  "bf-0022": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0089'])"
+  },
+  "bf-0023": {
+   "status": "built"
+  },
+  "bf-0024": {
+   "status": "blocked",
+   "reason": "missing_asset: platform has no asset for one of the brief's creative ids (creative_ids=['cr-0035', 'cr-0113', 'cr-0100', 'cr-9771'])"
+  },
+  "bf-0025": {
+   "status": "built"
+  },
+  "bf-0026": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0075'])"
+  },
+  "bf-0027": {
+   "status": "blocked",
+   "reason": "archived_account: the brief's account is archived on the platform (acct-008)"
+  },
+  "bf-0028": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0106'])"
+  },
+  "bf-0029": {
+   "status": "blocked",
+   "reason": "date_inversion: brief ends_at is not after starts_at"
+  },
+  "bf-0030": {
+   "status": "blocked",
+   "reason": "date_inversion: brief ends_at is not after starts_at"
+  },
+  "bf-0031": {
+   "status": "built"
+  },
+  "bf-0032": {
+   "status": "built"
+  },
+  "bf-0033": {
+   "status": "built"
+  },
+  "bf-0034": {
+   "status": "built"
+  },
+  "bf-0035": {
+   "status": "built"
+  },
+  "bf-0036": {
+   "status": "built"
+  },
+  "bf-0037": {
+   "status": "built"
+  },
+  "bf-0038": {
+   "status": "built"
+  },
+  "bf-0039": {
+   "status": "built"
+  },
+  "bf-0040": {
+   "status": "built"
+  },
+  "bf-0041": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0020'])"
+  },
+  "bf-0042": {
+   "status": "built"
+  },
+  "bf-0043": {
+   "status": "built"
+  },
+  "bf-0044": {
+   "status": "built"
+  },
+  "bf-0045": {
+   "status": "built"
+  },
+  "bf-0046": {
+   "status": "built"
+  },
+  "bf-0047": {
+   "status": "built"
+  },
+  "bf-0048": {
+   "status": "built"
+  },
+  "bf-0049": {
+   "status": "built"
+  },
+  "bf-0050": {
+   "status": "built"
+  },
+  "bf-0051": {
+   "status": "built"
+  },
+  "bf-0052": {
+   "status": "built"
+  },
+  "bf-0053": {
+   "status": "blocked",
+   "reason": "budget_below_floor: brief budget_cents is below the account's budget_floor_cents (budget_cents=42000, account=acct-004)"
+  },
+  "bf-0054": {
+   "status": "blocked",
+   "reason": "date_inversion: brief ends_at is not after starts_at"
+  },
+  "bf-0055": {
+   "status": "built"
+  },
+  "bf-0056": {
+   "status": "built"
+  },
+  "bf-0057": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0047'])"
+  },
+  "bf-0058": {
+   "status": "built"
+  },
+  "bf-0059": {
+   "status": "built"
+  },
+  "bf-0060": {
+   "status": "blocked",
+   "reason": "archived_account: the brief's account is archived on the platform (acct-008)"
+  },
+  "bf-0061": {
+   "status": "built"
+  },
+  "bf-0062": {
+   "status": "built"
+  },
+  "bf-0063": {
+   "status": "built"
+  },
+  "bf-0064": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0066'])"
+  },
+  "bf-0065": {
+   "status": "built"
+  },
+  "bf-0066": {
+   "status": "built"
+  },
+  "bf-0067": {
+   "status": "built"
+  },
+  "bf-0068": {
+   "status": "blocked",
+   "reason": "archived_account: the brief's account is archived on the platform (acct-008)"
+  },
+  "bf-0069": {
+   "status": "built"
+  },
+  "bf-0070": {
+   "status": "built"
+  },
+  "bf-0071": {
+   "status": "built"
+  },
+  "bf-0072": {
+   "status": "built"
+  },
+  "bf-0073": {
+   "status": "built"
+  },
+  "bf-0074": {
+   "status": "built"
+  },
+  "bf-0075": {
+   "status": "blocked",
+   "reason": "archived_account: the brief's account is archived on the platform (acct-008)"
+  },
+  "bf-0076": {
+   "status": "blocked",
+   "reason": "budget_below_floor: brief budget_cents is below the account's budget_floor_cents (budget_cents=12000, account=acct-002)"
+  },
+  "bf-0077": {
+   "status": "built"
+  },
+  "bf-0078": {
+   "status": "built"
+  },
+  "bf-0079": {
+   "status": "built"
+  },
+  "bf-0080": {
+   "status": "built"
+  },
+  "bf-0081": {
+   "status": "built"
+  },
+  "bf-0082": {
+   "status": "blocked",
+   "reason": "missing_asset: platform has no asset for one of the brief's creative ids (creative_ids=['cr-0011', 'cr-0082', 'cr-9954'])"
+  },
+  "bf-0083": {
+   "status": "built"
+  },
+  "bf-0084": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0064'])"
+  },
+  "bf-0085": {
+   "status": "built"
+  },
+  "bf-0086": {
+   "status": "built"
+  },
+  "bf-0087": {
+   "status": "built"
+  },
+  "bf-0088": {
+   "status": "built"
+  },
+  "bf-0089": {
+   "status": "built"
+  },
+  "bf-0090": {
+   "status": "blocked",
+   "reason": "budget_below_floor: brief budget_cents is below the account's budget_floor_cents (budget_cents=43000, account=acct-001)"
+  },
+  "bf-0091": {
+   "status": "built"
+  },
+  "bf-0092": {
+   "status": "built"
+  },
+  "bf-0093": {
+   "status": "built"
+  },
+  "bf-0094": {
+   "status": "built"
+  },
+  "bf-0095": {
+   "status": "built"
+  },
+  "bf-0096": {
+   "status": "built"
+  },
+  "bf-0097": {
+   "status": "built"
+  },
+  "bf-0098": {
+   "status": "built"
+  },
+  "bf-0099": {
+   "status": "built"
+  },
+  "bf-0100": {
+   "status": "built"
+  },
+  "bf-0101": {
+   "status": "built"
+  },
+  "bf-0102": {
+   "status": "built"
+  },
+  "bf-0103": {
+   "status": "blocked",
+   "reason": "budget_below_floor: brief budget_cents is below the account's budget_floor_cents (budget_cents=37000, account=acct-005)"
+  },
+  "bf-0104": {
+   "status": "built"
+  },
+  "bf-0105": {
+   "status": "built"
+  },
+  "bf-0106": {
+   "status": "built"
+  },
+  "bf-0107": {
+   "status": "built"
+  },
+  "bf-0108": {
+   "status": "built"
+  },
+  "bf-0109": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0047'])"
+  },
+  "bf-0110": {
+   "status": "built"
+  },
+  "bf-0111": {
+   "status": "blocked",
+   "reason": "missing_asset: platform has no asset for one of the brief's creative ids (creative_ids=['cr-0008', 'cr-0018', 'cr-9292'])"
+  },
+  "bf-0112": {
+   "status": "blocked",
+   "reason": "budget_below_floor: brief budget_cents is below the account's budget_floor_cents (budget_cents=33000, account=acct-007)"
+  },
+  "bf-0113": {
+   "status": "built"
+  },
+  "bf-0114": {
+   "status": "built"
+  },
+  "bf-0115": {
+   "status": "built"
+  },
+  "bf-0116": {
+   "status": "built"
+  },
+  "bf-0117": {
+   "status": "built"
+  },
+  "bf-0118": {
+   "status": "built"
+  },
+  "bf-0119": {
+   "status": "built"
+  },
+  "bf-0120": {
+   "status": "blocked",
+   "reason": "budget_below_floor: brief budget_cents is below the account's budget_floor_cents (budget_cents=34000, account=acct-005)"
+  },
+  "bf-0121": {
+   "status": "built"
+  },
+  "bf-0122": {
+   "status": "blocked",
+   "reason": "missing_asset: platform has no asset for one of the brief's creative ids (creative_ids=['cr-0132', 'cr-0002', 'cr-9575'])"
+  },
+  "bf-0123": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0047'])"
+  },
+  "bf-0124": {
+   "status": "built"
+  },
+  "bf-0125": {
+   "status": "built"
+  },
+  "bf-0126": {
+   "status": "built"
+  },
+  "bf-0127": {
+   "status": "built"
+  },
+  "bf-0128": {
+   "status": "built"
+  },
+  "bf-0129": {
+   "status": "blocked",
+   "reason": "date_inversion: brief ends_at is not after starts_at"
+  },
+  "bf-0130": {
+   "status": "built"
+  },
+  "bf-0131": {
+   "status": "built"
+  },
+  "bf-0132": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0049'])"
+  },
+  "bf-0133": {
+   "status": "built"
+  },
+  "bf-0134": {
+   "status": "blocked",
+   "reason": "archived_account: the brief's account is archived on the platform (acct-008)"
+  },
+  "bf-0135": {
+   "status": "built"
+  },
+  "bf-0136": {
+   "status": "built"
+  },
+  "bf-0137": {
+   "status": "blocked",
+   "reason": "date_inversion: brief ends_at is not after starts_at"
+  },
+  "bf-0138": {
+   "status": "built"
+  },
+  "bf-0139": {
+   "status": "built"
+  },
+  "bf-0140": {
+   "status": "built"
+  },
+  "bf-0141": {
+   "status": "blocked",
+   "reason": "date_inversion: brief ends_at is not after starts_at"
+  },
+  "bf-0142": {
+   "status": "built"
+  },
+  "bf-0143": {
+   "status": "built"
+  },
+  "bf-0144": {
+   "status": "built"
+  },
+  "bf-0145": {
+   "status": "built"
+  },
+  "bf-0146": {
+   "status": "built"
+  },
+  "bf-0147": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0116'])"
+  },
+  "bf-0148": {
+   "status": "built"
+  },
+  "bf-0149": {
+   "status": "built"
+  },
+  "bf-0150": {
+   "status": "built"
+  },
+  "bf-0151": {
+   "status": "built"
+  },
+  "bf-0152": {
+   "status": "blocked",
+   "reason": "archived_account: the brief's account is archived on the platform (acct-008)"
+  },
+  "bf-0153": {
+   "status": "built"
+  },
+  "bf-0154": {
+   "status": "built"
+  },
+  "bf-0155": {
+   "status": "built"
+  },
+  "bf-0156": {
+   "status": "built"
+  },
+  "bf-0157": {
+   "status": "built"
+  },
+  "bf-0158": {
+   "status": "blocked",
+   "reason": "archived_account: the brief's account is archived on the platform (acct-008)"
+  },
+  "bf-0159": {
+   "status": "built"
+  },
+  "bf-0160": {
+   "status": "blocked",
+   "reason": "archived_account: the brief's account is archived on the platform (acct-008)"
+  },
+  "bf-0161": {
+   "status": "built"
+  },
+  "bf-0162": {
+   "status": "built"
+  },
+  "bf-0163": {
+   "status": "built"
+  },
+  "bf-0164": {
+   "status": "built"
+  },
+  "bf-0165": {
+   "status": "built"
+  },
+  "bf-0166": {
+   "status": "built"
+  },
+  "bf-0167": {
+   "status": "blocked",
+   "reason": "archived_account: the brief's account is archived on the platform (acct-008)"
+  },
+  "bf-0168": {
+   "status": "built"
+  },
+  "bf-0169": {
+   "status": "built"
+  },
+  "bf-0170": {
+   "status": "built"
+  },
+  "bf-0171": {
+   "status": "built"
+  },
+  "bf-0172": {
+   "status": "built"
+  },
+  "bf-0173": {
+   "status": "built"
+  },
+  "bf-0174": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0064'])"
+  },
+  "bf-0175": {
+   "status": "built"
+  },
+  "bf-0176": {
+   "status": "built"
+  },
+  "bf-0177": {
+   "status": "built"
+  },
+  "bf-0178": {
+   "status": "built"
+  },
+  "bf-0179": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0072'])"
+  },
+  "bf-0180": {
+   "status": "built"
+  },
+  "bf-0181": {
+   "status": "built"
+  },
+  "bf-0182": {
+   "status": "built"
+  },
+  "bf-0183": {
+   "status": "blocked",
+   "reason": "budget_below_floor: brief budget_cents is below the account's budget_floor_cents (budget_cents=21000, account=acct-006)"
+  },
+  "bf-0184": {
+   "status": "built"
+  },
+  "bf-0185": {
+   "status": "built"
+  },
+  "bf-0186": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0106'])"
+  },
+  "bf-0187": {
+   "status": "built"
+  },
+  "bf-0188": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0099'])"
+  },
+  "bf-0189": {
+   "status": "blocked",
+   "reason": "missing_asset: platform has no asset for one of the brief's creative ids (creative_ids=['cr-0034', 'cr-0027', 'cr-0065', 'cr-9687'])"
+  },
+  "bf-0190": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0028'])"
+  },
+  "bf-0191": {
+   "status": "built"
+  },
+  "bf-0192": {
+   "status": "built"
+  },
+  "bf-0193": {
+   "status": "built"
+  },
+  "bf-0194": {
+   "status": "blocked",
+   "reason": "missing_asset: platform has no asset for one of the brief's creative ids (creative_ids=['cr-0098', 'cr-0040', 'cr-9560'])"
+  },
+  "bf-0195": {
+   "status": "built"
+  },
+  "bf-0196": {
+   "status": "built"
+  },
+  "bf-0197": {
+   "status": "built"
+  },
+  "bf-0198": {
+   "status": "built"
+  },
+  "bf-0199": {
+   "status": "built"
+  },
+  "bf-0200": {
+   "status": "blocked",
+   "reason": "date_inversion: brief ends_at is not after starts_at"
+  },
+  "bf-0201": {
+   "status": "built"
+  },
+  "bf-0202": {
+   "status": "built"
+  },
+  "bf-0203": {
+   "status": "built"
+  },
+  "bf-0204": {
+   "status": "built"
+  },
+  "bf-0205": {
+   "status": "built"
+  },
+  "bf-0206": {
+   "status": "built"
+  },
+  "bf-0207": {
+   "status": "blocked",
+   "reason": "missing_asset: platform has no asset for one of the brief's creative ids (creative_ids=['cr-0055', 'cr-0051', 'cr-9248'])"
+  },
+  "bf-0208": {
+   "status": "built"
+  },
+  "bf-0209": {
+   "status": "built"
+  },
+  "bf-0210": {
+   "status": "built"
+  },
+  "bf-0211": {
+   "status": "built"
+  },
+  "bf-0212": {
+   "status": "built"
+  },
+  "bf-0213": {
+   "status": "built"
+  },
+  "bf-0214": {
+   "status": "built"
+  },
+  "bf-0215": {
+   "status": "built"
+  },
+  "bf-0216": {
+   "status": "blocked",
+   "reason": "date_inversion: brief ends_at is not after starts_at"
+  },
+  "bf-0217": {
+   "status": "built"
+  },
+  "bf-0218": {
+   "status": "built"
+  },
+  "bf-0219": {
+   "status": "built"
+  },
+  "bf-0220": {
+   "status": "built"
+  },
+  "bf-0221": {
+   "status": "built"
+  },
+  "bf-0222": {
+   "status": "built"
+  },
+  "bf-0223": {
+   "status": "built"
+  },
+  "bf-0224": {
+   "status": "blocked",
+   "reason": "missing_asset: platform has no asset for one of the brief's creative ids (creative_ids=['cr-0031', 'cr-9775'])"
+  },
+  "bf-0225": {
+   "status": "built"
+  },
+  "bf-0226": {
+   "status": "built"
+  },
+  "bf-0227": {
+   "status": "built"
+  },
+  "bf-0228": {
+   "status": "blocked",
+   "reason": "date_inversion: brief ends_at is not after starts_at"
+  },
+  "bf-0229": {
+   "status": "built"
+  },
+  "bf-0230": {
+   "status": "blocked",
+   "reason": "date_inversion: brief ends_at is not after starts_at"
+  },
+  "bf-0231": {
+   "status": "built"
+  },
+  "bf-0232": {
+   "status": "blocked",
+   "reason": "budget_below_floor: brief budget_cents is below the account's budget_floor_cents (budget_cents=33000, account=acct-007)"
+  },
+  "bf-0233": {
+   "status": "built"
+  },
+  "bf-0234": {
+   "status": "blocked",
+   "reason": "budget_below_floor: brief budget_cents is below the account's budget_floor_cents (budget_cents=49000, account=acct-004)"
+  },
+  "bf-0235": {
+   "status": "built"
+  },
+  "bf-0236": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0089'])"
+  },
+  "bf-0237": {
+   "status": "blocked",
+   "reason": "budget_below_floor: brief budget_cents is below the account's budget_floor_cents (budget_cents=38000, account=acct-003)"
+  },
+  "bf-0238": {
+   "status": "blocked",
+   "reason": "date_inversion: brief ends_at is not after starts_at"
+  },
+  "bf-0239": {
+   "status": "built"
+  },
+  "bf-0240": {
+   "status": "blocked",
+   "reason": "asset_not_live: a creative in the brief is still a draft asset (retried until the deadline) (creative_ids=['cr-0089'])"
+  }
+ }
+}
