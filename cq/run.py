@@ -32,10 +32,31 @@ PERMANENT_PATTERNS = [
 ]
 
 
+# Error codes the platform actually returns on POST /s1/campaigns (422).
+# Observed in phase 1; each verified against the briefs/assets/accounts data.
+TRANSIENT_CODES = {
+    "asset_not_live",      # creative exists but status=draft; may go live later
+    "rate_limited",
+}
+PERMANENT_CODES = {
+    "missing_asset",       # creative id not in /s1/assets at all
+    "budget_below_floor",  # brief budget < account budget_floor_cents
+    "archived_account",    # every brief on acct-008
+    "date_inversion",      # ends_at <= starts_at
+    "unknown_account",
+}
+
+
 def classify_refusal(r: Result) -> str:
-    """Return 'transient' or 'blocked' for a non-2xx build response."""
+    """Return 'transient', 'blocked' or 'unknown' for a non-2xx build response."""
     if r.error or r.status in (408, 425, 429, 500, 502, 503, 504):
         return "transient"
+    j = r.json if isinstance(r.json, dict) else {}
+    code = j.get("error")
+    if code in TRANSIENT_CODES:
+        return "transient"
+    if code in PERMANENT_CODES:
+        return "blocked"
     text = r.text.lower()
     if any(re.search(p, text) for p in TRANSIENT_PATTERNS):
         return "transient"
@@ -58,19 +79,63 @@ def extract_reason(r: Result) -> str:
 
 # ---- hooks to fill in after discovery ---------------------------------------
 
+def _paginate(c: Client, path: str) -> list[dict]:
+    """GET a cursor-paginated list ({items, next_cursor, total}) to the end."""
+    # Pages sometimes repeat the boundary item (25 -> "25" returns the 25th
+    # again), so dedupe by id; the repeats were identical when checked.
+    seen: dict[str, dict] = {}
+    cursor: Optional[str] = None
+    while True:
+        r = c.get(path, params={"cursor": cursor} if cursor else None, tag="list")
+        if not r.ok or not isinstance(r.json, dict):
+            raise RuntimeError(f"list {path} failed: {r.brief()}")
+        for item in r.json.get("items") or []:
+            seen.setdefault(item["id"], item)
+        cursor = r.json.get("next_cursor")
+        if not cursor:
+            break
+    total = r.json.get("total")
+    if isinstance(total, int) and total != len(seen):
+        raise RuntimeError(f"list {path}: got {len(seen)} unique items, platform says total={total}")
+    return list(seen.values())
+
+
 def fetch_briefs(c: Client) -> list[dict]:
-    """Return all 240 briefs. Each must include an 'id' like 'bf-0001'."""
-    raise NotImplementedError("fill in after discovery")
+    """GET /s1/briefs, 25 per page via ?cursor=. Ids look like 'bf-0001'."""
+    return _paginate(c, "/s1/briefs")
+
+
+BRIEF_FIELDS = ("account_id", "name", "objective", "budget_cents", "starts_at", "ends_at", "creative_ids")
 
 
 def build_brief(c: Client, brief: dict) -> Result:
-    """Attempt to create the campaign for one brief."""
-    raise NotImplementedError("fill in after discovery")
+    """POST /s1/campaigns with the brief's own fields, verbatim.
+
+    201 -> created; 200 + deduplicated -> already existed (idempotent);
+    422 {error, brief_id} -> refusal (seen: missing_asset, budget_below_floor).
+    """
+    body = {"brief_id": brief["id"], **{k: brief[k] for k in BRIEF_FIELDS if k in brief}}
+    return c.post("/s1/campaigns", json_body=body, tag="build")
 
 
-def verify_campaign(c: Client, brief: dict, campaign_id: Any) -> bool:
-    """Read the campaign back; True only if the platform says it exists."""
-    raise NotImplementedError("fill in after discovery")
+def fetch_campaigns(c: Client) -> dict[str, dict]:
+    """Read back every campaign the platform lists, keyed by brief_id.
+
+    GET /s1/campaigns/{id} is 404 on this platform; the list is the only
+    read-back, so verification fetches it once per pass.
+    """
+    out: dict[str, dict] = {}
+    for item in _paginate(c, "/s1/campaigns"):
+        if item.get("brief_id"):
+            out[item["brief_id"]] = item
+    return out
+
+
+def verify_campaign(c: Client, brief: dict, campaign_id: Any, listing: Optional[dict] = None) -> bool:
+    """True only if the platform lists a campaign for this brief with this id."""
+    listing = fetch_campaigns(c) if listing is None else listing
+    item = listing.get(brief["id"])
+    return bool(item) and item.get("id") == campaign_id
 
 
 # ---- loop --------------------------------------------------------------------
@@ -101,16 +166,15 @@ def run_pass(c: Client, s: State, statuses=("pending", "transient", "unknown"), 
 
 def verify_pass(c: Client, s: State, workers: int = 4) -> None:
     ids = [bid for bid, rec in s.by_status("built") if not rec["verified"]]
-
-    def one(bid: str) -> None:
+    listing = fetch_campaigns(c)
+    for bid in ids:
         rec = s.data[bid]
-        ok = verify_campaign(c, rec["brief"], rec["campaign_id"])
-        if ok:
+        if verify_campaign(c, rec["brief"], rec["campaign_id"], listing):
             s.record(bid, "verified", None, verified=True)
         else:
-            s.record(bid, "verify-failed", None, status="unknown", verified=False,
-                     reason="platform reported built but campaign not found on read-back")
-
-    with ThreadPoolExecutor(max_workers=workers) as ex:
-        list(ex.map(one, ids))
+            # Seen in phase 2: ~10% of 201s never appear in the listing; a
+            # second POST (same id, 201 again, not deduplicated) makes them
+            # stick. Treat as transient so the retry loop re-posts them.
+            s.record(bid, "verify-failed", None, status="transient", verified=False,
+                     reason="platform returned 201 but campaign not in GET /s1/campaigns")
     s.save()

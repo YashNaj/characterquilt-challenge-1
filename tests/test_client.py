@@ -33,7 +33,24 @@ def make(tmp_path, script, **kw):
     session = FakeSession(script)
     c = Client(key="k-test", log_path=tmp_path / "http.jsonl", session=session,
                sleep=sleeps.append, **kw)
+    c._token, c._token_exp = "tok-test", 1e12  # pre-authenticated
     return c, session, sleeps
+
+
+def test_auth_is_fetched_lazily_and_refreshed_on_401(tmp_path):
+    c, session, _ = make(tmp_path, [
+        FakeResponse(200, {"access_token": "t1", "expires_in": 300}),
+        FakeResponse(200, {"ok": 1}),
+        FakeResponse(401, {"error": "expired"}),
+        FakeResponse(200, {"access_token": "t2", "expires_in": 300}),
+        FakeResponse(200, {"ok": 2}),
+    ])
+    c._token = None
+    assert c.get("/s1/a").json == {"ok": 1}
+    assert session.calls[0]["url"].endswith("/auth/start")
+    assert session.calls[1]["headers"]["Authorization"] == "Bearer t1"
+    assert c.get("/s1/b").json == {"ok": 2}
+    assert session.calls[4]["headers"]["Authorization"] == "Bearer t2"
 
 
 def test_sends_key_and_user_agent(tmp_path):

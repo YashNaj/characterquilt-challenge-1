@@ -13,6 +13,7 @@ from __future__ import annotations
 import json
 import os
 import random
+import threading
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -91,6 +92,38 @@ class Client:
         self.sleep = sleep
         self.timeout = timeout
         self.last_minutes_remaining: Optional[float] = None
+        self._token: Optional[str] = None
+        self._token_exp: float = 0.0
+        self._lock = threading.Lock()
+
+    # ---- bearer auth (discovered in phase 1) --------------------------------
+    # POST /auth/start with X-Candidate-Key returns {access_token, expires_in}.
+    # Tokens are short-lived (300s), so refresh a little before expiry and
+    # on any 401.
+    def _auth(self) -> str:
+        r = self._raw("POST", f"{self.base_url}/auth/start", None, None, {}, tag="auth")
+        j = r.json if isinstance(r.json, dict) else {}
+        tok = j.get("access_token")
+        if not tok:
+            raise RuntimeError(f"auth failed: {r.brief()}")
+        self._token = tok
+        self._token_exp = time.time() + float(j.get("expires_in", 300)) - 30
+        mr = r.minutes_remaining()
+        if mr is not None:
+            self.last_minutes_remaining = mr
+        return tok
+
+    def token(self) -> str:
+        with self._lock:
+            if self._token is None or time.time() >= self._token_exp:
+                return self._auth()
+            return self._token
+
+    def _reauth_if_still(self, used: str) -> None:
+        """Refresh once per stale token; concurrent threads share the refresh."""
+        with self._lock:
+            if self._token == used:
+                self._auth()
 
     def _log(self, record: dict) -> None:
         self.log_path.parent.mkdir(parents=True, exist_ok=True)
@@ -107,14 +140,35 @@ class Client:
         tag: str = "",
     ) -> Result:
         url = path if path.startswith("http") else f"{self.base_url}/{path.lstrip('/')}"
+        attempts = 0
+        reauths = 0
+        while True:
+            attempts += 1
+            tok = self.token()
+            headers = {"Authorization": f"Bearer {tok}"}
+            last = self._raw(method, url, json_body, params, headers, tag, attempts)
+            if last.status == 401 and reauths < 3:
+                reauths += 1
+                self._reauth_if_still(tok)
+                continue
+            mr = last.minutes_remaining()
+            if mr is not None:
+                self.last_minutes_remaining = mr
+
+            retryable = last.error is not None or last.status in RETRY_STATUSES
+            if not retry or not retryable or attempts >= self.max_attempts:
+                return last
+            self.sleep(self._backoff(attempts, last))
+
+    def _raw(self, method: str, url: str, json_body: Any, params: Optional[dict],
+             extra_headers: dict, tag: str = "", attempts: int = 1) -> Result:
         headers = {
             "X-Candidate-Key": self.key,
             "User-Agent": USER_AGENT,
             "Accept": "application/json, */*",
+            **extra_headers,
         }
-        attempts = 0
-        while True:
-            attempts += 1
+        if True:
             t0 = time.time()
             rec: dict = {
                 "ts": t0,
@@ -139,15 +193,7 @@ class Client:
                 last = Result(0, {}, "", elapsed, attempts, error=repr(exc))
                 rec.update(status=0, error=repr(exc), elapsed=elapsed)
             self._log(rec)
-
-            mr = last.minutes_remaining()
-            if mr is not None:
-                self.last_minutes_remaining = mr
-
-            retryable = last.error is not None or last.status in RETRY_STATUSES
-            if not retry or not retryable or attempts >= self.max_attempts:
-                return last
-            self.sleep(self._backoff(attempts, last))
+            return last
 
     @staticmethod
     def _backoff(attempt: int, last: Result) -> float:
