@@ -36,8 +36,16 @@ def reverify_all(c: Client, s: State) -> int:
 
 def cycle(c: Client, s: State) -> dict:
     lost = reverify_all(c, s)
-    run_pass(c, s, statuses=("transient", "unknown"), workers=3)
+    # Blocked briefs are re-posted unchanged too: it costs 44 requests per
+    # cycle and is the only way to notice if the platform's world changes
+    # (an account un-archived, a floor lowered, an asset appearing).
+    before = {bid: rec["reason"] for bid, rec in s.by_status("blocked")}
+    run_pass(c, s, statuses=("transient", "unknown", "blocked"), workers=3)
     verify_pass(c, s)
+    changed = {bid: (before[bid], s.data[bid]["status"], s.data[bid]["reason"])
+               for bid in before if s.data[bid]["status"] != "blocked" or s.data[bid]["reason"] != before[bid]}
+    if changed:
+        print("BLOCKED CHANGED:", json.dumps(changed), flush=True)
     assets = collections.Counter(a["status"] for a in _paginate(c, "/s1/assets"))
     return {"lost": lost, "assets": dict(assets), **s.counts()}
 
