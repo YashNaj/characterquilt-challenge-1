@@ -44,3 +44,5 @@ _(tbd)_
 - Agent transcript: Claude Code session stored under
   `~/.claude/projects/-Users-Yash-Developer-characterquilt-challenge-1/`;
   copy the session `.jsonl` into `transcript/` before sending.
+- Transcript export: `scripts/export_transcript.sh` copies the raw session
+  JSONL files into `transcript/` (run after the seal, then commit).
