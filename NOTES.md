@@ -129,8 +129,10 @@ builds), `run.py` (fetch, build, verify against the listing),
 
 _Final read-back 2026-09-02 16:02:22: {'built': 174, 'blocked': 66}, minutes_left=13.0._
 
-_Transcript note: `transcript/` is the raw Claude Code session record,
-copied untouched. The candidate key value appears in the phase-0 session
+_Transcript note: `transcript/` is the raw Claude Code session record.
+The phase-0 session and the run session are untouched except that the run
+session file ends where the work for the screen ends (just before drafting
+the cover email), since the rest of that chat was hand-off logistics. The candidate key value appears in the phase-0 session
 (when `key.txt` was written). It is a single-use key for this one sealed
 test run and is left as-is deliberately; nothing in the transcript was
 edited._
