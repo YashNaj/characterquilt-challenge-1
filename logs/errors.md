@@ -1,6 +1,6 @@
 # Error digest
 
-Generated 2026-09-02 15:59:50. 3079 exchanges logged, 1944 non-2xx.
+Generated 2026-09-02 16:02:22. 3094 exchanges logged, 1944 non-2xx.
 
 Counts are occurrences; the retry loop re-posts transient briefs every cycle, so one brief can account for many rows. 'Briefs' is the number of distinct brief ids.
 
