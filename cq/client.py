@@ -21,7 +21,7 @@ from typing import Any, Callable, Optional
 import requests
 
 BASE_URL = "https://cq-screen.bhairav.workers.dev"
-USER_AGENT = "cq-screen-runner/0.1 (python-requests; +yashalnajeeb@gmail.com)"
+USER_AGENT = "cq-screen-runner/0.1 (+yashalnajeeb@gmail.com)"
 ROOT = Path(__file__).resolve().parent.parent
 HTTP_LOG = ROOT / "logs" / "http.jsonl"
 

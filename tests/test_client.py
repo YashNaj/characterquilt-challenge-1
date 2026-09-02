@@ -42,7 +42,8 @@ def test_sends_key_and_user_agent(tmp_path):
     assert r.ok and r.json == {"ok": True}
     h = session.calls[0]["headers"]
     assert h["X-Candidate-Key"] == "k-test"
-    assert "urllib" not in h["User-Agent"] and h["User-Agent"]
+    ua = h["User-Agent"].lower()
+    assert ua and "urllib" not in ua and "python" not in ua
     assert session.calls[0]["url"] == "https://cq-screen.bhairav.workers.dev/s1/whatever"
 
 
