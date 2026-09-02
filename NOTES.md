@@ -97,6 +97,15 @@ every existing build against the listing, and watched the asset list.
 No asset changed status during the run, so they are reported blocked
 with the platform's code and the creative id.
 
+I did not try to make the drafts live myself, and would not have even
+if a route existed (none does: there is no write method on assets).
+A campaign builder's remit is the campaign. The asset belongs to whoever
+produces the creative, and "draft" means they have not signed off.
+Flipping it to get a build through would be approving someone else's
+work on their behalf, not working around an unreliable platform. The
+only things I changed all run were my own requests: re-posting identical
+bodies, backing off, refreshing tokens.
+
 ## What I would do differently
 
 Not much. The buildable and blocked sets were identified inside the
