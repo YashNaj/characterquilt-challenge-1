@@ -102,3 +102,6 @@ _(tbd)_
   copy the session `.jsonl` into `transcript/` before sending.
 - Transcript export: `scripts/export_transcript.sh` copies the raw session
   JSONL files into `transcript/` (run after the seal, then commit).
+
+
+_Final read-back 2026-09-02 15:07:11: {'built': 174, 'blocked': 66}, minutes_left=68.0._

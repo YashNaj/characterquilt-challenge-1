@@ -58,6 +58,9 @@ def main() -> int:
     a = ap.parse_args()
     c = Client()
     s = State()
+    from pathlib import Path
+    import os
+    Path("state/loop.pid").write_text(str(os.getpid()))
     while True:
         c._auth()  # refresh clock reading
         left = c.last_minutes_remaining

@@ -4,6 +4,9 @@
 """
 import collections, json, sys, time
 from pathlib import Path
+ROOT = Path(__file__).resolve().parent.parent
+if len(sys.argv) == 1:
+    sys.stdout = (ROOT / "logs/errors.md").open("w")
 
 rows = [json.loads(l) for l in (Path(__file__).resolve().parent.parent / "logs/http.jsonl").open()]
 errs = [r for r in rows if not (200 <= (r.get("status") or 0) < 300)]
