@@ -1,37 +1,39 @@
 # Error digest
 
-Generated 2026-09-02 14:38:52. 896 exchanges logged, 379 non-2xx.
+Generated 2026-09-02 14:41:32. 940 exchanges logged, 402 non-2xx.
 
-| status | error | count | routes |
-|---|---|---|---|
-| 422 | `asset_not_live` | 220 | POST /s1/campaigns (220) |
-| 404 | `not_found` | 40 | GET /s1 (2), GET /s1/creatives (2), GET /s1/ (1) |
-| 429 | `rate_limited` | 32 | POST /s1/campaigns (25), GET /s1/assets (5), GET /s1/campaigns (1) |
-| 401 | `missing_bearer_token` | 29 | GET /s1 (1), GET /s1/me (1), GET /s1/run (1) |
-| 422 | `missing_asset` | 13 | POST /s1/campaigns (13) |
-| 422 | `budget_below_floor` | 12 | POST /s1/campaigns (12) |
-| 422 | `archived_account` | 11 | POST /s1/campaigns (11) |
-| 422 | `date_inversion` | 11 | POST /s1/campaigns (11) |
-| 401 | `invalid_token` | 8 | GET /s1/assets/cr-0002 (2), GET /s1/assets (2), GET /s1/assets/cr-9072 (2) |
-| 422 | `unknown_account` | 2 | POST /s1/campaigns (2) |
-| 400 | `brief_id_required` | 1 | POST /s1/campaigns (1) |
+Counts are occurrences; the retry loop re-posts transient briefs every cycle, so one brief can account for many rows. 'Briefs' is the number of distinct brief ids.
 
-## HTTP 422 `asset_not_live` — 220 occurrences
+| status | error | occurrences | briefs | routes |
+|---|---|---|---|---|
+| 422 | `asset_not_live` | 242 | 22 | POST /s1/campaigns (242) |
+| 404 | `not_found` | 40 |  | GET /s1 (2), GET /s1/creatives (2), GET /s1/ (1) |
+| 429 | `rate_limited` | 33 | 25 | POST /s1/campaigns (25), GET /s1/assets (6), GET /s1/campaigns (1) |
+| 401 | `missing_bearer_token` | 29 |  | GET /s1 (1), GET /s1/me (1), GET /s1/run (1) |
+| 422 | `missing_asset` | 13 | 12 | POST /s1/campaigns (13) |
+| 422 | `budget_below_floor` | 12 | 11 | POST /s1/campaigns (12) |
+| 422 | `archived_account` | 11 | 11 | POST /s1/campaigns (11) |
+| 422 | `date_inversion` | 11 | 11 | POST /s1/campaigns (11) |
+| 401 | `invalid_token` | 8 |  | GET /s1/assets/cr-0002 (2), GET /s1/assets (2), GET /s1/assets/cr-9072 (2) |
+| 422 | `unknown_account` | 2 | 2 | POST /s1/campaigns (2) |
+| 400 | `brief_id_required` | 1 |  | POST /s1/campaigns (1) |
 
-First seen 14:18:54, last 14:36:20.
+## HTTP 422 `asset_not_live` — 242 occurrences
+
+First seen 14:18:54, last 14:39:31.
 
 Example: `POST /s1/campaigns`  headers {'Content-Type': 'application/json'}
 
 Request body:
 ```json
 {
- "brief_id": "bf-0240",
- "account_id": "acct-002",
- "name": "physio-us-northeast-leads-0240",
- "objective": "traffic",
- "budget_cents": 99000,
- "starts_at": 1769644800,
- "ends_at": 1770422400,
+ "brief_id": "bf-0236",
+ "account_id": "acct-004",
+ "name": "dental-us-west-retargeting-0236",
+ "objective": "retargeting",
+ "budget_cents": 326000,
+ "starts_at": 1767657600,
+ "ends_at": 1771545600,
  "creative_ids": [
   "cr-0089"
  ]
@@ -41,7 +43,7 @@ Response body:
 ```json
 {
   "error": "asset_not_live",
-  "brief_id": "bf-0240",
+  "brief_id": "bf-0236",
   "creative_ids": [
     "cr-0089"
   ],
@@ -64,11 +66,11 @@ Response body:
 }
 ```
 
-## HTTP 429 `rate_limited` — 32 occurrences
+## HTTP 429 `rate_limited` — 33 occurrences
 
-First seen 14:18:56, last 14:37:21.
+First seen 14:18:56, last 14:39:33.
 
-Example: `GET /s1/briefs`  headers {'Content-Type': 'application/json', 'Retry-After': '4'}
+Example: `GET /s1/assets`  headers {'Content-Type': 'application/json', 'Retry-After': '6'}
 
 Response body:
 ```json

@@ -20,10 +20,13 @@ for r in errs:
 
 print(f"# Error digest\n\nGenerated {time.strftime('%Y-%m-%d %H:%M:%S')}. "
       f"{len(rows)} exchanges logged, {len(errs)} non-2xx.\n")
-print("| status | error | count | routes |\n|---|---|---|---|")
+print("Counts are occurrences; the retry loop re-posts transient briefs every cycle, "
+      "so one brief can account for many rows. 'Briefs' is the number of distinct brief ids.\n")
+print("| status | error | occurrences | briefs | routes |\n|---|---|---|---|---|")
 for (st, cd), rs in sorted(groups.items(), key=lambda kv: -len(kv[1])):
     routes = collections.Counter(r["method"] + " " + r["url"].split("dev")[1].split("?")[0] for r in rs)
-    print(f"| {st} | `{cd}` | {len(rs)} | {', '.join(f'{k} ({v})' for k, v in routes.most_common(3))} |")
+    nb = len({(r.get("request_body") or {}).get("brief_id") for r in rs} - {None})
+    print(f"| {st} | `{cd}` | {len(rs)} | {nb or ''} | {', '.join(f'{k} ({v})' for k, v in routes.most_common(3))} |")
 
 for (st, cd), rs in sorted(groups.items(), key=lambda kv: -len(kv[1])):
     r = rs[-1]
