@@ -4,13 +4,53 @@ Screen 1 ("the queue") for CharacterQuilt. Candidate: Yashal Najeeb.
 
 ## How I worked out what the platform does
 
-_(filled in during the run: routes found, what each error told me, the
-transient-vs-permanent distinction as the platform actually expresses it)_
+Clock started 14:14 local (first request). Everything below was learned
+from response bodies; there are no docs.
+
+- Unauthenticated `GET /s1` → 401 `missing_bearer_token` with a hint:
+  `POST /auth/start` with `X-Candidate-Key` returns `{access_token,
+  expires_in: 300, run_minutes_remaining}`. Tokens last five minutes, so
+  the client refreshes before expiry and once more on any 401 (a lock
+  serialises refreshes; the first threaded run raced and produced spurious
+  401s that looked like route answers).
+- Live routes (everything else is 404): `GET /s1/briefs` (240),
+  `GET /s1/assets` (140), `GET /s1/accounts` (8), `GET|POST /s1/campaigns`.
+  `GET /s1/campaigns/{id}` is 404, so the listing is the only read-back.
+- Lists are cursor-paginated 25 at a time (`?cursor=25`). Some page
+  boundaries repeat the boundary item (244 rows for `total: 240`), so the
+  paginator dedupes by id and checks the unique count against `total`.
+- `POST /s1/campaigns` takes the brief's own fields plus `brief_id`
+  (`account_id` and `creative_ids` are required; `brief_id` alone → 
+  `unknown_account`). 201 on create, 200 `deduplicated: true` on repeat.
+- Refusals are 422 with an `error` code and the `brief_id`:
+  - `asset_not_live` (+ `creative_ids`, `asset_status: draft`) — 22 briefs.
+    The creative exists but is a draft. Treated as "not right now" and
+    re-posted every cycle; assets are polled to see if drafts go live.
+  - `missing_asset` — 11 briefs; the creative id is not in `/s1/assets`
+    at all (e.g. `cr-9072`). Permanent.
+  - `budget_below_floor` — 11 briefs; `budget_cents` is under the
+    account's `budget_floor_cents`. Permanent as written; raising the
+    budget would change the client's brief, so not attempted.
+  - `archived_account` — 11 briefs, all on `acct-008`. Permanent.
+  - `date_inversion` — 11 briefs with `ends_at <= starts_at`. Permanent.
+  - `rate_limited` (429, `Retry-After: 9`) — transport-level, retried.
+- **The −3 trap:** in the first pass 174 POSTs returned 201 but the
+  listing had `total: 154`. Twenty campaigns were accepted and silently
+  dropped; nothing in their briefs distinguishes them and only 1 of 20 had
+  seen a 429. Re-POSTing returns 201 again (same id, *not* deduplicated)
+  and after that they appear in the listing. So every build is verified
+  against the listing, dropped ones are re-posted, and the loop also
+  re-verifies all previously-listed campaigns each cycle in case they
+  vanish later.
 
 ## What I decided about the briefs I could not build
 
-_(per refusal class: what the platform said, whether I retried, why I
-reported it the way I did)_
+See the refusal table above. Only `asset_not_live` was retried on a
+schedule (the asset can plausibly go live). The four permanent classes
+are reported `blocked` with the platform's error code verbatim as the
+reason. I did not edit briefs to get past `budget_below_floor` or
+`date_inversion`: the brief is the client's ask, and a campaign with a
+different budget or swapped dates is not the campaign they asked for.
 
 ## Scoring stance
 

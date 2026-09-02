@@ -81,5 +81,30 @@ class State:
                 report[bid] = {"status": "built"}
             else:
                 reason = rec.get("reason") or f"unresolved: last state {rec['status']}"
-                report[bid] = {"status": "blocked", "reason": reason}
+                report[bid] = {"status": "blocked", "reason": explain(reason, rec)}
         return {"report": report}
+
+
+# Platform error code -> human sentence. The code itself stays first in the
+# reason so the platform's own wording is never lost.
+EXPLAIN = {
+    "missing_asset": "platform has no asset for one of the brief's creative ids",
+    "budget_below_floor": "brief budget_cents is below the account's budget_floor_cents",
+    "archived_account": "the brief's account is archived on the platform",
+    "date_inversion": "brief ends_at is not after starts_at",
+    "asset_not_live": "a creative in the brief is still a draft asset (retried until the deadline)",
+}
+
+
+def explain(reason: str, rec: dict) -> str:
+    text = EXPLAIN.get(reason)
+    if not text:
+        return reason
+    b = rec.get("brief") or {}
+    if reason == "budget_below_floor":
+        text += f" (budget_cents={b.get('budget_cents')}, account={b.get('account_id')})"
+    elif reason == "archived_account":
+        text += f" ({b.get('account_id')})"
+    elif reason in ("missing_asset", "asset_not_live"):
+        text += f" (creative_ids={b.get('creative_ids')})"
+    return f"{reason}: {text}"
