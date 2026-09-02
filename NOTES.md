@@ -37,6 +37,7 @@ _(tbd)_
 - `cq/state.py` – per-brief state in `state/briefs.json`, resumable.
 - `cq/run.py` – build/verify loop; hooks filled in after discovery.
 - `cq/cli.py` – `probe`, `status`, `report [--post --yes]`.
+- `cq/discover.py` – one-shot probe of ~30 curated routes for phase 1.
 - Tests: `.venv/bin/python -m pytest`.
 - Clock guard: the CLI refuses the first authenticated request unless
   `CQ_START_CLOCK=1` is set.

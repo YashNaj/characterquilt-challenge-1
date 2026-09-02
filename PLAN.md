@@ -15,7 +15,8 @@ First authenticated request starts the clock:
 
     CQ_START_CLOCK=1 .venv/bin/python -m cq.cli probe GET /s1
 
-Then guess obvious routes (briefs, queue, campaigns, report) and read every
+Then `CQ_START_CLOCK=1 .venv/bin/python -m cq.discover` probes /s1 first, then
+~30 curated routes, one summary line each. Read every
 response body, errors included; the errors are the documentation.
 Output: brief shape, how to create a campaign, how to read one back, what
 a refusal looks like. Fill in the three stub hooks in `cq/run.py`
