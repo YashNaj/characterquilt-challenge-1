@@ -43,6 +43,22 @@ from response bodies; there are no docs.
   re-verifies all previously-listed campaigns each cycle in case they
   vanish later.
 
+## Where the platform is unreliable (measured)
+
+From 839 logged exchanges plus targeted probes:
+
+| Failure | Evidence | Handling |
+|---|---|---|
+| Creates silently dropped | 20 of 172 first-pass 201s absent from the listing (`total: 154`); 2 of 20 re-posts dropped again. No pattern in id, position, timing, content, or prior 429s. | Verify every build against the listing; re-post until listed; re-verify all each cycle. |
+| Rate limiting | 429 `rate_limited`, `Retry-After` 6–9 s, arriving in bursts of four about every 10 s under 4 workers. | Honour Retry-After, back off, 3 workers in the loop. |
+| Short tokens | `expires_in: 300`; concurrent refreshes raced and produced spurious 401s. | Refresh 30 s early under a lock; retry once on 401. |
+| Pagination overlap | Pages repeat the boundary item at some cursors (244 rows for 240; 178 for 174). Never drops items. | Dedupe by id; assert unique count == `total`. |
+| Draft assets | 22 briefs each reference exactly one `draft` creative. No timestamp, header, or route hints when/if it goes live. | Re-post every 3 min; report blocked with the code if still draft at the deadline. |
+
+Reads are consistent: five back-to-back campaign listings were identical,
+no brief drifted between fetches, latency p95 0.28 s, no 5xx seen.
+GET by id does not exist for any resource.
+
 ## What I decided about the briefs I could not build
 
 See the refusal table above. Only `asset_not_live` was retried on a
