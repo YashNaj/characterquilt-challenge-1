@@ -27,7 +27,7 @@ As of 14:46 (74 minutes in) no draft asset has changed status.
 
 ### `rate_limited` (35 occurrences)
 
-```json
+```text
 {"error": "rate_limited"}      // HTTP 429, Retry-After: 9
 ```
 

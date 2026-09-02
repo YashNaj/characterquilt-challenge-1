@@ -5,7 +5,7 @@ No documentation exists on the platform (no WADL, OpenAPI, index, links or
 exchanges. Verbatim bodies are in `PLATFORM_SAYS.md`; the raw log is
 `logs/http.jsonl`.
 
-```
+```text
 https://cq-screen.bhairav.workers.dev
 │
 ├── GET  /            {"service":"cq-screen","ok":true}
@@ -42,7 +42,7 @@ Everything else is `404 {"error":"not_found"}`: per-item GETs
 
 All three paginated lists share one envelope and one bug:
 
-```json
+```text
 {"items": [...], "next_cursor": "25" | null, "total": 240}
 ```
 
@@ -57,7 +57,7 @@ All three paginated lists share one envelope and one bug:
 
 ### Resource shapes
 
-```
+```text
 brief    {id: "bf-0001", account_id, name, objective, budget_cents, starts_at, ends_at, creative_ids: [cr-…]}
 asset    {id: "cr-0001", kind: carousel|image|video, ratio: 1:1|16:9|9:16|4:5, status: live|draft}
 account  {id: "acct-001", name, budget_floor_cents}          ← no status field, yet one account is archived
@@ -74,7 +74,7 @@ body**, not the stored brief (a body without `creative_ids` is refused
 even though the brief has them). The order the checks run in, inferred
 from which error wins when several apply:
 
-```
+```text
 POST /s1/campaigns
  │
  ├─ no brief_id            → 400 brief_id_required
