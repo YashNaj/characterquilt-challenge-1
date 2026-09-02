@@ -118,8 +118,8 @@ account; the archived state belongs to the account. I did not
 change budgets, dates, accounts or creative lists to force them through,
 because the brief is the client's ask and a campaign built to different
 numbers is not the campaign they asked for. All 44 were re-posted
-unchanged every three minutes for the rest of the run and refused
-identically each time.
+unchanged every three minutes from 15:04 until the loop stopped at 15:51
+and refused identically each time.
 
 The other 22 were refused because their single creative was still a
 draft. That is a state, not an identity, so I treated it as "not yet"
