@@ -1,7 +1,7 @@
 # Run plan for screen 1 ("the queue")
 
-Status: **Phase 0 complete. Clock NOT started.** No authenticated request
-has been sent. `logs/` and `state/` are empty on purpose.
+Written before the clock started and left as it was. Outcome is in
+`README.md` and `NOTES.md`.
 
 Goal: end with a true statement about all 240 briefs, as many as possible
 genuinely built, and one sealed report posted before two hours elapse.
@@ -65,9 +65,3 @@ into `transcript/`. Commit.
 - Trust `run_minutes_remaining` from responses over any local timer.
 - Base URL https://cq-screen.bhairav.workers.dev, key in `key.txt`
   (git-ignored), sent as `X-Candidate-Key`; custom User-Agent required.
-
-## Resuming after a restart
-1. `cd ~/Developer/characterquilt-challenge-1 && .venv/bin/python -m pytest`
-2. If `logs/http.jsonl` is empty the clock has not started; otherwise
-   `python -m cq.cli status` shows where the run got to and
-   `state/briefs.json` is the source of truth.

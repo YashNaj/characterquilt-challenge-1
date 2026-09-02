@@ -1,7 +1,7 @@
 # API map, reconstructed from responses
 
 No documentation exists on the platform (no WADL, OpenAPI, index, links or
-`Allow` headers). Everything below was inferred from ~1,300 logged
+`Allow` headers). Everything below was inferred from ~3,100 logged
 exchanges. Verbatim bodies are in `PLATFORM_SAYS.md`; the raw log is
 `logs/http.jsonl`.
 

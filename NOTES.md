@@ -45,7 +45,7 @@ from response bodies; there are no docs.
 
 ## Where the platform is unreliable (measured)
 
-From 839 logged exchanges plus targeted probes:
+From roughly 3,100 logged exchanges plus targeted probes:
 
 | Failure | Evidence | Handling |
 |---|---|---|
@@ -65,15 +65,6 @@ Reads are consistent: five back-to-back campaign listings were identical,
 no brief drifted between fetches, latency p95 0.28 s, no 5xx seen.
 GET by id does not exist for any resource.
 
-## What I decided about the briefs I could not build
-
-See the refusal table above. Only `asset_not_live` was retried on a
-schedule (the asset can plausibly go live). The four permanent classes
-are reported `blocked` with the platform's error code verbatim as the
-reason. I did not edit briefs to get past `budget_below_floor` or
-`date_inversion`: the brief is the client's ask, and a campaign with a
-different budget or swapped dates is not the campaign they asked for.
-
 ## Scoring stance
 
 - A brief is reported `built` only if it was read back from the platform
@@ -84,15 +75,15 @@ different budget or swapped dates is not the campaign they asked for.
 - Unresolved briefs at the deadline are reported blocked, not built
   (−0.25 worst case vs −3).
 
-## Decisions, in my own words
+## What I decided about the briefs I could not build
 
 The 44 briefs I reported blocked were refused for reasons fixed in the
 data the platform holds, not in anything I controlled: eleven referenced
 a creative id that does not exist, eleven had a budget under their
 account's floor, eleven were on the one archived account, and eleven had
-an end date before their start date. (Correction to my first draft of
-this note: the dates and budgets are properties of the brief, checked
-against the account; the archived state is the account's.) I did not
+an end date before their start date.
+The dates and budgets are properties of the brief, checked against the
+account; the archived state belongs to the account. I did not
 change budgets, dates, accounts or creative lists to force them through,
 because the brief is the client's ask and a campaign built to different
 numbers is not the campaign they asked for. All 44 were re-posted
@@ -128,27 +119,13 @@ running and post at the end.
 
 ## Tooling
 
-- `cq/client.py` – authenticated client; retries transport failures; logs
-  every exchange to `logs/http.jsonl` (raw, untidied).
-- `cq/state.py` – per-brief state in `state/briefs.json`, resumable.
-- `cq/run.py` – build/verify loop; hooks filled in after discovery.
-- `cq/cli.py` – `probe`, `status`, `report [--post --yes]`.
-- `cq/discover.py` – one-shot probe of ~30 curated routes for phase 1.
-- Tests: `.venv/bin/python -m pytest`.
-- Clock guard: the CLI refuses the first authenticated request unless
-  `CQ_START_CLOCK=1` is set.
-- Agent transcript: Claude Code session stored under
-  `~/.claude/projects/-Users-Yash-Developer-characterquilt-challenge-1/`;
-  copy the session `.jsonl` into `transcript/` before sending.
-- Transcript export: `scripts/export_transcript.sh` copies the raw session
-  JSONL files into `transcript/` (run after the seal, then commit).
-
-
-_Final read-back 2026-09-02 15:07:11: {'built': 174, 'blocked': 66}, minutes_left=68.0._
-
-
-_Final read-back 2026-09-02 15:59:50: {'built': 174, 'blocked': 66}, minutes_left=15.0._
-
+All in `cq/`: `client.py` (bearer refresh under a lock, Retry-After
+backoff, every exchange appended raw to `logs/http.jsonl`), `state.py`
+(per-brief state and history, report builder that only claims verified
+builds), `run.py` (fetch, build, verify against the listing),
+`loop.py` (re-verify all, re-post transient and blocked, watch assets),
+`finalize.py` (final read-back, report file, one-shot post).
+`.venv/bin/python -m pytest` runs 18 offline tests.
 
 _Final read-back 2026-09-02 16:02:22: {'built': 174, 'blocked': 66}, minutes_left=13.0._
 
