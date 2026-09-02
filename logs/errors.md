@@ -1,26 +1,29 @@
 # Error digest
 
-Generated 2026-09-02 15:07:11. 1476 exchanges logged, 703 non-2xx.
+Generated 2026-09-02 15:59:50. 3079 exchanges logged, 1944 non-2xx.
 
 Counts are occurrences; the retry loop re-posts transient briefs every cycle, so one brief can account for many rows. 'Briefs' is the number of distinct brief ids.
 
 | status | error | occurrences | briefs | routes |
 |---|---|---|---|---|
-| 422 | `asset_not_live` | 440 | 22 | POST /s1/campaigns (440) |
-| 429 | `rate_limited` | 48 | 31 | POST /s1/campaigns (31), GET /s1/assets (14), GET /s1/campaigns (2) |
-| 404 | `not_found` | 40 |  | GET /s1 (2), GET /s1/creatives (2), GET /s1/ (1) |
-| 422 | `missing_asset` | 35 | 12 | POST /s1/campaigns (35) |
-| 422 | `budget_below_floor` | 34 | 11 | POST /s1/campaigns (34) |
-| 422 | `archived_account` | 33 | 11 | POST /s1/campaigns (33) |
-| 422 | `date_inversion` | 33 | 11 | POST /s1/campaigns (33) |
+| 422 | `asset_not_live` | 748 | 22 | POST /s1/campaigns (748) |
+| 404 | `not_found` | 189 |  | GET /s1 (2), GET /s1/status (2), GET /s1/docs (2) |
+| 422 | `missing_asset` | 189 | 12 | POST /s1/campaigns (189) |
+| 422 | `budget_below_floor` | 188 | 11 | POST /s1/campaigns (188) |
+| 422 | `archived_account` | 187 | 11 | POST /s1/campaigns (187) |
+| 422 | `date_inversion` | 187 | 11 | POST /s1/campaigns (187) |
+| 429 | `rate_limited` | 159 | 39 | POST /s1/campaigns (79), GET /s1/assets (29), GET /s1/campaigns (5) |
+| 401 | `invalid_token` | 59 | 21 | POST /s1/campaigns (27), GET /s1/campaigns (8), GET /s1/assets (6) |
 | 401 | `missing_bearer_token` | 29 |  | GET /s1 (1), GET /s1/me (1), GET /s1/run (1) |
-| 401 | `invalid_token` | 8 |  | GET /s1/assets/cr-0002 (2), GET /s1/assets (2), GET /s1/assets/cr-9072 (2) |
 | 422 | `unknown_account` | 2 | 2 | POST /s1/campaigns (2) |
+| 429 | `(non-json)` | 2 |  | HEAD /s1/campaigns (1), HEAD /s1/report (1) |
+| 401 | `(non-json)` | 2 |  | HEAD /s1/campaigns (1), HEAD /s1/report (1) |
+| 404 | `(non-json)` | 2 |  | HEAD /s1/campaigns (1), HEAD /s1/report (1) |
 | 400 | `brief_id_required` | 1 |  | POST /s1/campaigns (1) |
 
-## HTTP 422 `asset_not_live` — 440 occurrences
+## HTTP 422 `asset_not_live` — 748 occurrences
 
-First seen 14:18:54, last 15:04:03.
+First seen 14:18:54, last 15:51:05.
 
 Example: `POST /s1/campaigns`  headers {'Content-Type': 'application/json'}
 
@@ -53,26 +56,11 @@ Response body:
 
 Briefs affected (22): bf-0003, bf-0007, bf-0015, bf-0020, bf-0022, bf-0026, bf-0028, bf-0041, bf-0057, bf-0064, bf-0084, bf-0109, bf-0123, bf-0132, bf-0147, bf-0174, bf-0179, bf-0186, bf-0188, bf-0190, bf-0236, bf-0240
 
-## HTTP 429 `rate_limited` — 48 occurrences
+## HTTP 404 `not_found` — 189 occurrences
 
-First seen 14:18:56, last 15:04:12.
+First seen 14:15:13, last 15:25:07.
 
-Example: `GET /s1/campaigns`  headers {'Content-Type': 'application/json', 'Retry-After': '8'}
-
-Response body:
-```json
-{
-  "error": "rate_limited"
-}
-```
-
-Briefs affected (31): bf-0003, bf-0007, bf-0015, bf-0016, bf-0024, bf-0027, bf-0041, bf-0042, bf-0043, bf-0044, bf-0053, bf-0060, bf-0068, bf-0080, bf-0082, bf-0083, bf-0084, bf-0119, bf-0122, bf-0123, bf-0124, bf-0161, bf-0162, bf-0163, bf-0164, bf-0201, bf-0202, bf-0203, bf-0204, bf-0236, bf-0240
-
-## HTTP 404 `not_found` — 40 occurrences
-
-First seen 14:15:13, last 14:34:16.
-
-Example: `GET /s1/assets/cr-0104?include=history`  headers {'Content-Type': 'application/json'}
+Example: `GET /s1/spec.json`  headers {'Content-Type': 'application/json'}
 
 Response body:
 ```json
@@ -81,9 +69,9 @@ Response body:
 }
 ```
 
-## HTTP 422 `missing_asset` — 35 occurrences
+## HTTP 422 `missing_asset` — 189 occurrences
 
-First seen 14:16:34, last 15:04:11.
+First seen 14:16:34, last 15:51:15.
 
 Example: `POST /s1/campaigns`  headers {'Content-Type': 'application/json'}
 
@@ -113,9 +101,9 @@ Response body:
 
 Briefs affected (12): bf-0002, bf-0005, bf-0008, bf-0010, bf-0024, bf-0082, bf-0111, bf-0122, bf-0189, bf-0194, bf-0207, bf-0224
 
-## HTTP 422 `budget_below_floor` — 34 occurrences
+## HTTP 422 `budget_below_floor` — 188 occurrences
 
-First seen 14:16:35, last 15:04:11.
+First seen 14:16:35, last 15:51:15.
 
 Example: `POST /s1/campaigns`  headers {'Content-Type': 'application/json'}
 
@@ -144,9 +132,9 @@ Response body:
 
 Briefs affected (11): bf-0006, bf-0053, bf-0076, bf-0090, bf-0103, bf-0112, bf-0120, bf-0183, bf-0232, bf-0234, bf-0237
 
-## HTTP 422 `archived_account` — 33 occurrences
+## HTTP 422 `archived_account` — 187 occurrences
 
-First seen 14:18:55, last 15:04:11.
+First seen 14:18:55, last 15:51:15.
 
 Example: `POST /s1/campaigns`  headers {'Content-Type': 'application/json'}
 
@@ -176,9 +164,9 @@ Response body:
 
 Briefs affected (11): bf-0014, bf-0016, bf-0027, bf-0060, bf-0068, bf-0075, bf-0134, bf-0152, bf-0158, bf-0160, bf-0167
 
-## HTTP 422 `date_inversion` — 33 occurrences
+## HTTP 422 `date_inversion` — 187 occurrences
 
-First seen 14:18:55, last 15:04:11.
+First seen 14:18:55, last 15:51:15.
 
 Example: `POST /s1/campaigns`  headers {'Content-Type': 'application/json'}
 
@@ -208,6 +196,37 @@ Response body:
 
 Briefs affected (11): bf-0029, bf-0030, bf-0054, bf-0129, bf-0137, bf-0141, bf-0200, bf-0216, bf-0228, bf-0230, bf-0238
 
+## HTTP 429 `rate_limited` — 159 occurrences
+
+First seen 14:18:56, last 15:51:16.
+
+Example: `GET /s1/assets`  headers {'Content-Type': 'application/json', 'Retry-After': '8'}
+
+Response body:
+```json
+{
+  "error": "rate_limited"
+}
+```
+
+Briefs affected (39): bf-0003, bf-0005, bf-0006, bf-0007, bf-0015, bf-0016, bf-0024, bf-0027, bf-0041, bf-0042, bf-0043, bf-0044, bf-0053, bf-0054, bf-0060, bf-0068, bf-0080, bf-0082, bf-0083, bf-0084, bf-0119, bf-0122, bf-0123, bf-0124, bf-0161, bf-0162, bf-0163, bf-0164, bf-0190, bf-0201, bf-0202, bf-0203, bf-0204, bf-0216, bf-0224, bf-0228, bf-0230, bf-0236, bf-0240
+
+## HTTP 401 `invalid_token` — 59 occurrences
+
+First seen 14:16:53, last 15:10:54.
+
+Example: `GET /s1/assets`  headers {'Content-Type': 'application/json'}
+
+Response body:
+```json
+{
+  "error": "invalid_token",
+  "hint": "POST /auth/start with your X-Candidate-Key to get a fresh one"
+}
+```
+
+Briefs affected (21): bf-0005, bf-0006, bf-0020, bf-0022, bf-0026, bf-0029, bf-0030, bf-0053, bf-0090, bf-0103, bf-0111, bf-0123, bf-0132, bf-0141, bf-0147, bf-0152, bf-0158, bf-0216, bf-0224, bf-0228, bf-0240
+
 ## HTTP 401 `missing_bearer_token` — 29 occurrences
 
 First seen 14:14:31, last 14:14:33.
@@ -219,20 +238,6 @@ Response body:
 {
   "error": "missing_bearer_token",
   "hint": "POST /auth/start with your X-Candidate-Key to get one"
-}
-```
-
-## HTTP 401 `invalid_token` — 8 occurrences
-
-First seen 14:16:53, last 14:16:54.
-
-Example: `GET /s1/accounts/acct-005/creatives`  headers {'Content-Type': 'application/json'}
-
-Response body:
-```json
-{
-  "error": "invalid_token",
-  "hint": "POST /auth/start with your X-Candidate-Key to get a fresh one"
 }
 ```
 
@@ -257,6 +262,39 @@ Response body:
 ```
 
 Briefs affected (2): bf-0001, bf-0002
+
+## HTTP 429 `(non-json)` — 2 occurrences
+
+First seen 15:10:02, last 15:10:03.
+
+Example: `HEAD /s1/report`  headers {'Content-Type': 'application/json', 'Retry-After': '5'}
+
+Response body:
+```json
+
+```
+
+## HTTP 401 `(non-json)` — 2 occurrences
+
+First seen 15:10:53, last 15:10:55.
+
+Example: `HEAD /s1/report`  headers {'Content-Type': 'application/json'}
+
+Response body:
+```json
+
+```
+
+## HTTP 404 `(non-json)` — 2 occurrences
+
+First seen 15:10:54, last 15:10:55.
+
+Example: `HEAD /s1/report`  headers {'Content-Type': 'application/json'}
+
+Response body:
+```json
+
+```
 
 ## HTTP 400 `brief_id_required` — 1 occurrences
 
