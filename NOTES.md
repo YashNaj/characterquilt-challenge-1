@@ -151,3 +151,5 @@ _Final read-back 2026-09-02 15:59:50: {'built': 174, 'blocked': 66}, minutes_lef
 
 
 _Final read-back 2026-09-02 16:02:22: {'built': 174, 'blocked': 66}, minutes_left=13.0._
+
+_Transcript note: the candidate key value appeared in the phase-0 session transcript (creating key.txt) and was replaced with `<CANDIDATE_KEY_REDACTED>` in the exported copy. Nothing else in `transcript/` was edited._
