@@ -2,6 +2,37 @@
 
 Screen 1 ("the queue") for CharacterQuilt. Candidate: Yashal Najeeb.
 
+## How I worked
+
+I ran this with Claude Code as the agent and myself as the operator.
+The split was deliberate:
+
+- **Before the clock.** I used the challenge email to design the harness
+  with the agent first: a client that logs every exchange raw, resumable
+  per-brief state, a build loop with three empty hooks to fill in after
+  discovery, and a CLI that refuses to send the first authenticated
+  request unless I explicitly say so. I wrote the standing rules into
+  `PLAN.md` (never claim a build that was not read back; doubt at the
+  deadline → blocked; trust the platform's clock over mine; commit after
+  every phase) and had the agent follow them. Tests were green and
+  `logs/` was empty before I started the clock.
+- **During the run.** The agent did discovery, filled in the hooks,
+  ran the passes and the retry loop. My job was to ask the questions
+  that could sink the score: is pagination actually complete, are the
+  "never" refusals really never (re-post them all unchanged), does the
+  platform describe itself anywhere we did not look, does the report
+  file match the shape in the email exactly. Several of those checks
+  are in the notes below because the answers were worth recording.
+- **The one irreversible action.** The agent was instructed not to post
+  the report until I said so. Before saying so I had it re-read every
+  build from the listing, write the report to disk, and validate it
+  against the email's format. It posted with thirteen minutes left.
+
+Timeline (local): 14:14 first request; 14:21 first full pass verified
+and the preliminary report shape known; 14:23–15:51 retry loop, every
+three minutes; 15:04 blocked briefs added to the loop's unchanged
+re-posts; 15:59 final read-back; 16:02 report posted and sealed.
+
 ## How I worked out what the platform does
 
 Clock started 14:14 local (first request). Everything below was learned
@@ -108,12 +139,20 @@ bodies, backing off, refreshing tokens.
 
 ## What I would do differently
 
-Not much. The buildable and blocked sets were identified inside the
-first fifteen minutes; everything after that was verification. The one
-thing I would extend is the loop: the only state on this platform that
-looked mutable was `live | draft` on assets, and I only observed it for
-ninety minutes. Given another two hours I would simply keep the loop
-running and post at the end.
+The buildable and blocked sets were identified inside the first fifteen
+minutes; everything after that was verification, and the report did not
+change. Three things I would tighten:
+
+- Put the blocked briefs into the retry loop from the start, not at
+  15:04. Re-posting them unchanged costs nothing and is the only way to
+  notice the platform's world changing.
+- Serialise token refresh before running anything threaded. The first
+  concurrent probe raced on the five-minute token and produced 401s
+  that briefly looked like route answers.
+- Extend the loop. The only state on this platform that looked mutable
+  was `live | draft` on assets, and I observed it for ninety minutes.
+  Given another two hours I would keep the loop running and post at the
+  end.
 
 ## What I am still unsure of
 
@@ -141,7 +180,8 @@ _Final read-back 2026-09-02 16:02:22: {'built': 174, 'blocked': 66}, minutes_lef
 _Transcript note: `transcript/` is the raw Claude Code session record.
 The phase-0 session and the run session are untouched except that the run
 session file ends where the work for the screen ends (just before drafting
-the cover email), since the rest of that chat was hand-off logistics. The candidate key value appears in the phase-0 session
-(when `key.txt` was written). It is a single-use key for this one sealed
+the cover email), since the rest of that chat was hand-off logistics.
+The candidate key value appears in the phase-0 session (when `key.txt`
+was written). It is a single-use key for this one sealed
 test run and is left as-is deliberately; nothing in the transcript was
 edited._
