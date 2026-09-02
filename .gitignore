@@ -1,0 +1,6 @@
+key.txt
+.venv/
+__pycache__/
+.pytest_cache/
+.context-mem/
+state/*.tmp
